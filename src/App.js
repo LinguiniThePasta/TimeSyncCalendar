@@ -1,25 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
+import Signin from './components/SignIn'
+import SignUp from "./components/SignUp";
+import AuthDetails from "./components/AuthDetails"
 
 function App() {
+  let dates = new Date();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="App">
+          <Signin/>
+          <SignUp/>
+          <AuthDetails/>
+      </div>
+
   );
 }
-
 export default App;
