@@ -3,8 +3,12 @@ import './App.css';
 import Signin from './components/SignIn'
 import SignUp from "./components/SignUp";
 import AuthDetails from "./components/AuthDetails"
+import generateDatesBetweenGivenDates from "./components/calendar";
 
 function App() {
+    var dA = new Date("September 15, 2023");
+    var dB = new Date("October 15, 2023");
+    console.log(generateDatesBetweenGivenDates(dA, dB));
   return (
       <body>
         <nav className={"navBar"}>
@@ -29,6 +33,8 @@ function App() {
         </div>
         <div className={"Calendar"}>
             CALENDAR GOES HERE
+
+
         </div>
       </body>
   )
