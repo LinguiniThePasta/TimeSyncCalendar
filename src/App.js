@@ -5,14 +5,12 @@ import SignUp from "./components/SignUp";
 import AuthDetails from "./components/AuthDetails"
 
 function App() {
-  let dates = new Date();
   return (
-      <div className="App">
-          <Signin/>
-          <SignUp/>
-          <AuthDetails/>
-      </div>
+      <body>
+        <div>
 
-  );
+        </div>
+      </body>
+  )
 }
 export default App;
