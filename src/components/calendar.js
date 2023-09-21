@@ -1,5 +1,6 @@
 
 export function generateDatesBetweenGivenDates(dateA, dateB) {
+    //Assumes that the Month is the same
     var startDate = dateA.getDate();
     var startDay = dateA.getDay();
     var endDate = dateB.getDate();
@@ -7,10 +8,17 @@ export function generateDatesBetweenGivenDates(dateA, dateB) {
 
     for (let i = startDate; i <= endDate; i++) {
         var d = (startDay)%7;
-        generatedDates.push(d);
+        generatedDates.push([i, d]);
         startDay++;
     }
+    // in the format of [date, day]
     return generatedDates;
 }
 
-export default generateDatesBetweenGivenDates;
+export function nextMonth(currentMonth) {
+    if (currentMonth.getMonth() == 11) {
+        var current = new Date(currentMonth.getFullYear() + 1, 0, 1);
+    } else {
+        var current = new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1, 1);
+    }
+}

@@ -3,12 +3,15 @@ import './App.css';
 import Signin from './components/SignIn'
 import SignUp from "./components/SignUp";
 import AuthDetails from "./components/AuthDetails"
-import generateDatesBetweenGivenDates from "./components/calendar";
+import * as calendar from "./components/calendar";
+import {generateDatesBetweenGivenDates} from "./components/calendar";
 
 function App() {
-    var dA = new Date("September 15, 2023");
-    var dB = new Date("October 15, 2023");
-    console.log(generateDatesBetweenGivenDates(dA, dB));
+    var dA = new Date("October 21, 2023");
+    var dB = new Date("October 31, 2023");
+    const datesArray = calendar.generateDatesBetweenGivenDates(dA, dB)
+    console.log(dA.getDate());
+    console.log(datesArray);
   return (
       <body>
         <nav className={"navBar"}>
@@ -32,9 +35,16 @@ function App() {
             </div>
         </div>
         <div className={"Calendar"}>
-            CALENDAR GOES HERE
-
-
+            {datesArray.map((element) => (
+                <div>
+                    <div>
+                        {element[1]}
+                    </div>
+                    <div>
+                        {element[0]}
+                    </div>
+                </div>
+            ))}
         </div>
       </body>
   )
