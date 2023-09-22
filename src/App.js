@@ -15,10 +15,10 @@ function App() {
   return (
       <body>
         <nav className={"navBar"}>
+            <button className="navLogoButton">
+                SynCal
+            </button>
             <ul className="navBarItems">
-                <li className="navItems">
-                    <a href="" className="navLink">SynCal</a>
-                </li>
                 <li className="navItems">
                     <a href="" className="navLink">Sign In</a>
                 </li>
@@ -28,7 +28,9 @@ function App() {
             </ul>
         </nav>
         <div className={"heading"}>
-            SEP 2023
+            <div className={"monthAndYear"}>
+                SEP 2023
+            </div>
             <div className={"backAndForth"}>
                 <button id={"back"}>BACK</button>
                 <button id={"back"}>FORWARD</button>
